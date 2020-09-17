@@ -8,7 +8,7 @@ $(document).ready (function() {
        "method": "GET",
        "success": function (data, status) {
          var result = data.response;
-         
+
          render(result);
        },
 
