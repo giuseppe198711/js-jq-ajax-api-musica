@@ -25,7 +25,7 @@ $(document).ready (function() {
 
 
 function render (results) {
-  var source = $(".cds-container").html();
+  var source = $("#disco-template").html();
   var template = Handlebars.compile(source);
 
   for (var i = 0; i < results.length; i++) {
