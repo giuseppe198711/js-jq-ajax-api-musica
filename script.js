@@ -41,7 +41,7 @@ function render (results) {
 
     var html = template(context);
 
-    $(".container").append(html);
+    $(".cds-container").append(html);
   }
 
 
