@@ -4,10 +4,11 @@ $(document).ready (function() {
   $.ajax(
 
     {
-       "url": "https://flynn.boolean.careers/exercises/api/array/music,",
+       "url": "https://flynn.boolean.careers/exercises/api/array/music",
        "method": "GET",
-       "succes": function (data, status) {
+       "success": function (data, status) {
          var result = data.response;
+         
          render(result);
        },
 
@@ -24,21 +25,21 @@ $(document).ready (function() {
 
 
 function render (results) {
-  var source = $("cds-container").html();
-  var template = Handlebars.compile(souce);
+  var source = $(".cds-container").html();
+  var template = Handlebars.compile(source);
 
-  for (var i = 0; i < result.length; i++) {
-    var album = result[i];
+  for (var i = 0; i < results.length; i++) {
+    var album = results[i];
 
 
-    var contex = {
+    var context = {
       "poster": album.poster,
       "title": album.title,
       "author": album.author,
       "year": album.year
     };
 
-    var html = template(album);
+    var html = template(context);
 
     $(".container").append(html);
   }
